@@ -6,7 +6,6 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -17,6 +16,11 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import RemoveRedEye from '@mui/icons-material/RemoveRedEye';
+import HomeIcon from '@mui/icons-material/Home';
+import { Link } from "react-router-dom";
+import DarkTheme from '../Components/darkTheme';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -122,27 +126,42 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
 
       <MenuItem>
+        <Link to={"/home"} >
+          <IconButton size="large" >
+            <HomeIcon style={{ color: 'black' }} />
+          </IconButton>
+        </Link>
+        <p>Home</p>
+      </MenuItem >
+
+      <MenuItem>
+      <Link to={"/favorites"} >
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
+            <BookmarkIcon style={{ color: 'black' }}/>
         </IconButton>
-        <p>Notifications</p>
+        </Link>
+        <p> Favorites </p>
       </MenuItem>
+
+      <MenuItem>
+      <Link to={"/favorites"} >
+        <IconButton
+          size="large"
+          aria-label="show 17 new notifications"
+          color="inherit"
+        >
+            <RemoveRedEye style={{ color: 'black' }}/>
+        </IconButton>
+        </Link>
+        <p>Now watching</p>
+      </MenuItem>
+
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -155,29 +174,22 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
-    </Menu>
+    </Menu >
   );
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+
+
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            TvMaze-App
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -190,20 +202,26 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+
+            <Link to={"/home"} >
+              <IconButton size="large" >
+                <HomeIcon style={{ color: 'white' }} />
+              </IconButton>
+            </Link>
+
+            <Link to={"/favorites"} >
+              <IconButton size="large" >
+                  <BookmarkIcon style={{ color: 'white' }} />
+              </IconButton>
+            </Link>
+
+            <DarkTheme></DarkTheme>
+
+            <Link to={"/favorites"} >
+              <IconButton size="large" >
+                  <RemoveRedEyeIcon style={{ color: 'white' }} />
+              </IconButton>
+            </Link>
             <IconButton
               size="large"
               edge="end"

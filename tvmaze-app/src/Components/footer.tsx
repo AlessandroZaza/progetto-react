@@ -3,7 +3,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-
 import { Link } from "react-router-dom";
 
 function Copyright() {
@@ -28,7 +27,7 @@ export default function StickyFooter() {
         minHeight: '100vh',
       }}
     >
-      <Box
+      <Box  style={{ borderTop: '1px solid grey'}}
         component="footer"
         sx={{
           py: 3,

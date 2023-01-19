@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { createBrowserRouter, BrowserRouter, Route, RouterProvider } from 'react-router-dom';
 import Home from './Pages/home';
-import Favourites from './Pages/favourites';
+import Favorites from './Pages/favorites';
 import DetailPage from './Pages/detailPage';
 import SearchPage from './Pages/searchPage';
 import SignIn from './Pages/signIn';
@@ -50,11 +50,11 @@ const router = createBrowserRouter([
     ,
   },
   {
-    path: "/favourite",
+    path: "/favorites",
     element: 
 
 
-        <Favourites />
+        <Favorites />
 
     ,
   },
@@ -87,6 +87,5 @@ function AppCard() {
     </div>
   );
 }
-
 
 export default App;

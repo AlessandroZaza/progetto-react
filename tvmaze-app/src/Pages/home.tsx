@@ -3,7 +3,6 @@ import Footer from '../Components/footer'
 import MovieCard from '../Components/movieCard'
 import CardList from '../Components/cardList';
 
-
 const data = [
     { image: '/image1.jpg', text: 'Card 1' },
     { image: '/image2.jpg', text: 'Card 2' },
