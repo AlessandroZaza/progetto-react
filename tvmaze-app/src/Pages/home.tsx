@@ -7,8 +7,12 @@ import CardList from '../Components/cardList';
 const data = [
     { image: '/image1.jpg', text: 'Card 1' },
     { image: '/image2.jpg', text: 'Card 2' },
-    { image: '/image2.jpg', text: 'Card 2' },
-    { image: '/image2.jpg', text: 'Card 2' },
+    { image: '/image3.jpg', text: 'Card 3' },
+    { image: '/image4.jpg', text: 'Card 4' },
+    { image: '/image3.jpg', text: 'Card 3' },
+    { image: '/image4.jpg', text: 'Card 4' },
+    { image: '/image3.jpg', text: 'Card 3' },
+    { image: '/image4.jpg', text: 'Card 4' },
 ];
 
 function Home() {
@@ -17,9 +21,9 @@ return (
     <>
         <Navbar></Navbar>
 
-        <div style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap', border: '1px solid red' }}>
+        <div style={{ height: '90%', display: 'flex', justifyContent: 'space-evenly', alignItems:'center'}}>
 
-            <div className="home">
+            <div className="home" style={{ width: '90%', height: '90%', display: 'flex', justifyContent: 'space-evenly'}}>
                 <CardList data={data} />
             </div>
         </div>

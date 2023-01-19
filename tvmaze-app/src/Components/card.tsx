@@ -13,7 +13,7 @@ interface ICardProps {
 export const FilmCard: React.FC<ICardProps> = ({ image, text }) => {
     return (
         <div className="filmCard">
-            <Card sx={{ maxWidth: 345 }} style={{ margin: '1% 0% 0% 0%' }}>
+            <Card sx={{ maxWidth: 345 }} style={{ margin: '3% 2% 2% 2%' }}>
             <CardActionArea>
                     <CardMedia
                         component="img"
