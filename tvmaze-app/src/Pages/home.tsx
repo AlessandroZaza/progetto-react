@@ -2,6 +2,7 @@ import Navbar from '../Components/navbar'
 import Footer from '../Components/footer'
 import MovieCard from '../Components/movieCard'
 import CardList from '../Components/cardList';
+import React from 'react';
 
 const data = [
     { image: '/image1.jpg', text: 'Card 1' },

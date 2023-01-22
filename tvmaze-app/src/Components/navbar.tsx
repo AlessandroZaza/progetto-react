@@ -16,7 +16,6 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import RemoveRedEye from '@mui/icons-material/RemoveRedEye';
 import HomeIcon from '@mui/icons-material/Home';
 import { Link } from "react-router-dom";
@@ -219,7 +218,7 @@ export default function PrimarySearchAppBar() {
 
             <Link to={"/favorites"} >
               <IconButton size="large" >
-                  <RemoveRedEyeIcon style={{ color: 'white' }} />
+                  <RemoveRedEye style={{ color: 'white' }} />
               </IconButton>
             </Link>
             <IconButton
