@@ -42,7 +42,7 @@ export default function SignIn() {
 
     return (
 
-        <div style={{ border: '2px solid black', maxWidth: '25%', position: 'absolute', top: '40%', left: '50%', transform: 'translate(-50%, -50%)', padding: '0.5% 0.5% 0.5% 0.5%', backgroundColor: 'whitesmoke'}}>
+        <div style={{ border: '2px solid whitesmoke', width: '100%', height: '100%', padding: '5% 5% 5% 5%', marginTop: '35%', backgroundColor: 'whitesmoke'}}>
 
             <ThemeProvider theme={theme}>
                 <Container component="main" maxWidth="xs">
@@ -55,9 +55,12 @@ export default function SignIn() {
                             alignItems: 'center',
                         }}
                     >
+                        <Typography component="h1" variant="h4" style={{ position: 'absolute', top: '20%' }} >
+                            TvMaze-App
+                        </Typography>
                         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
                         </Avatar>
-                        <Typography component="h1" variant="h5">
+                        <Typography component="h2" variant="h5">
                             Sign in
                         </Typography>
                         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>

@@ -11,8 +11,6 @@ const Favorites = () => {
             
                 
                 <h3>Preferiti:</h3>
-                
-                <TVShowsList />
             
             
 

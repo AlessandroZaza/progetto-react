@@ -15,11 +15,13 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
 import RemoveRedEye from '@mui/icons-material/RemoveRedEye';
 import HomeIcon from '@mui/icons-material/Home';
 import { Link } from "react-router-dom";
 import DarkTheme from '../Components/darkTheme';
+import '../Style/TVShowCard.css'; // importa il file CSS per la card
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -125,41 +127,32 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-
-      <MenuItem>
-        <Link to={"/home"} >
+      <Link to={"/home"} className="link-no-decoration" >
+        <MenuItem>
           <IconButton size="large" >
             <HomeIcon style={{ color: 'black' }} />
           </IconButton>
-        </Link>
-        <p>Home</p>
-      </MenuItem >
+          <p style={{ color: 'black' }} > Home </p>
+        </MenuItem >
+      </Link>
 
-      <MenuItem>
-      <Link to={"/favorites"} >
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-            <BookmarkIcon style={{ color: 'black' }}/>
-        </IconButton>
-        </Link>
-        <p> Favorites </p>
-      </MenuItem>
+      <Link to={"/favorites"} className="link-no-decoration" >
+        <MenuItem>
+          <IconButton size="large">
+            <FavoriteIcon style={{ color: 'black' }} />
+          </IconButton>
+          <p style={{ color: 'black' }}> Favorites </p>
+        </MenuItem>
+      </Link>
 
-      <MenuItem>
-      <Link to={"/favorites"} >
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-            <RemoveRedEye style={{ color: 'black' }}/>
-        </IconButton>
-        </Link>
-        <p>Now watching</p>
-      </MenuItem>
+      <Link to={"/favorites"} className="link-no-decoration" >
+        <MenuItem>
+          <IconButton size="large">
+            <RemoveRedEye style={{ color: 'black' }} />
+          </IconButton>
+          <p style={{ color: 'black' }}> Now watching </p>
+        </MenuItem>
+      </Link>
 
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -178,7 +171,7 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ marginBottom: '0vh' }}>
         <Toolbar>
 
 
@@ -210,7 +203,7 @@ export default function PrimarySearchAppBar() {
 
             <Link to={"/favorites"} >
               <IconButton size="large" >
-                  <BookmarkIcon style={{ color: 'white' }} />
+                <FavoriteIcon style={{ color: 'white' }} />
               </IconButton>
             </Link>
 
@@ -218,7 +211,7 @@ export default function PrimarySearchAppBar() {
 
             <Link to={"/favorites"} >
               <IconButton size="large" >
-                  <RemoveRedEye style={{ color: 'white' }} />
+                <RemoveRedEye style={{ color: 'white' }} />
               </IconButton>
             </Link>
             <IconButton

@@ -3,6 +3,7 @@ import Footer from '../Components/footer'
 import MovieCard from '../Components/movieCard'
 import CardList from '../Components/cardList';
 import React from 'react';
+import TVShowsList from '../Components/tvShowsList'
 
 const data = [
     { image: '/image1.jpg', text: 'Card 1' },
@@ -21,12 +22,7 @@ return (
     <>
         <Navbar></Navbar>
 
-        <div style={{ height: '90%', display: 'flex', justifyContent: 'space-evenly', alignItems:'center'}}>
-
-            <div className="home" style={{ width: '90%', height: '90%', display: 'flex', justifyContent: 'space-evenly'}}>
-                <CardList data={data} />
-            </div>
-        </div>
+        <TVShowsList />
 
         <Footer></Footer>
     </>
