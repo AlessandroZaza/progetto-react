@@ -9,6 +9,7 @@ import SearchPage from './Pages/searchPage';
 import SignIn from './Pages/signIn';
 import SignUp from './Pages/signUp';
 import CardList from './Components/cardList';
+import NowWatching from './Pages/nowWatching';
 
 const router = createBrowserRouter([
   { path: "/", element: <SignIn /> },
@@ -55,6 +56,15 @@ const router = createBrowserRouter([
 
 
         <Favorites />
+
+    ,
+  },
+  {
+    path: "/now-watching",
+    element: 
+
+
+        <NowWatching />
 
     ,
   },

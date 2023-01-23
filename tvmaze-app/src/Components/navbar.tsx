@@ -145,7 +145,7 @@ export default function PrimarySearchAppBar() {
         </MenuItem>
       </Link>
 
-      <Link to={"/favorites"} className="link-no-decoration" >
+      <Link to={"/now-watching"} className="link-no-decoration" >
         <MenuItem>
           <IconButton size="large">
             <RemoveRedEye style={{ color: 'black' }} />
@@ -209,7 +209,7 @@ export default function PrimarySearchAppBar() {
 
             <DarkTheme></DarkTheme>
 
-            <Link to={"/favorites"} >
+            <Link to={"/now-watching"} >
               <IconButton size="large" >
                 <RemoveRedEye style={{ color: 'white' }} />
               </IconButton>

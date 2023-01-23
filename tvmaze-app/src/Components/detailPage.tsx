@@ -50,31 +50,34 @@ const DetailPage: React.FC<Props> = ({ match }) => {
         fetchData();
     }, [match.params.id]);
 
+    if (!show) {
+        return <div style={{ border: '1px solid whitesmoke', position: 'fixed', width: '100%', minHeight: '100vh', backgroundColor: 'whitesmoke' }}>
 
-    return (
-        <div>
-            {!show ? (
-                <div>Loading...</div>
-            ) : (
-                <>
-                    <h1>{show.name}</h1>
-                    <img src={show.image.medium} alt={show.name} />
-                    <p>{show.summary}</p>
-                    <h2>Cast</h2>
-                    <ul>
-                        {show.cast.map((actor) => (
-                            <li key={actor.name}>{actor.name}</li>
-                        ))}
-                    </ul>
-                    <p>Premiered: {show.premiered}</p>
-                    <p>Runtime: {show.runtime} minutes</p>
-                </>
-            )}
-        </div>
-    );
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '33vh' }}>
+                <CircularProgress />
+                <p style={{ marginTop: '2.5vh' }}> Loading ... </p>
+            </Box>
 
-}
+        </div>;
+    } else {
+        return (
+            <div>
+                <h1>{show.name}</h1>
+                <img src={show.image.medium} alt={show.name} />
+                <p>{show.summary}</p>
+                <h2>Cast</h2>
+                <ul>
+                    {show.cast.map((actor) => (
+                        <li key={actor.name}>{actor.name}</li>
+                    ))}
+                </ul>
+                <p>Premiered: {show.premiered}</p>
+                <p>Runtime: {show.runtime} minutes</p>
+            </div>
+        );
+    }
 
 
+};
 
 export default DetailPage;

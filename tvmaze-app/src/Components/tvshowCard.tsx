@@ -53,7 +53,7 @@ const TVShowCard: React.FC<ShowProps> = (props) => {
         <Divider variant="middle" style={{ marginTop: '3%', marginBottom: '5%' }} />
 
         <div className='card-buttons'>
-          <Link to={`/show/${props.id}`} className="link-no-decoration">
+          <Link to={`/search/${props.id}`} className="link-no-decoration">
             <Button variant="contained" >Read More</Button>
           </Link>
           <IconButton size="large" style={{ color: 'rgb(32, 104, 197)' }}>

@@ -1,18 +1,17 @@
 import Navbar from '../Components/navbar'
 import Footer from '../Components/footer'
 
-const SearchPage = () => {
+const NowWatching = () => {
 
     return (
         <>
-            <Navbar></Navbar>
+            <Navbar></Navbar>           
                 
-                <h3>Search Page</h3>
+                <h3>Now watching</h3>
 
             <Footer></Footer>
         </>
     )
   }
   
-  export default SearchPage;
-
+  export default NowWatching;
