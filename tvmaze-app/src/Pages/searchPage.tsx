@@ -1,6 +1,6 @@
 import Navbar from '../Components/navbar'
 import Footer from '../Components/footer'
-import Example from '../Components/test'
+import Example from '../Components/addNowWatching'
 
 const SearchPage = () => {
 

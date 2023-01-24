@@ -9,6 +9,7 @@ import Card from '@mui/material/Card';
 import { CardActionArea } from '@mui/material';
 import { Link } from "react-router-dom";
 import { useState } from 'react';
+import AddNowWatching from './addNowWatching';
 
 interface ShowProps {
   id: number;
@@ -44,9 +45,8 @@ const TVShowCard: React.FC<ShowProps> = (props) => {
           <Link to={`/search/${props.id}`} className="link-no-decoration">
             <Button variant="contained" >Read More</Button>
           </Link>
-          <IconButton size="large" style={{ color: 'rgb(32, 104, 197)' }}>
-            <RemoveRedEye />
-          </IconButton>
+          
+          <AddNowWatching />
 
           <IconButton size="large" onClick={handleClick}>
             {isFavorited ? <FavoriteIcon style={{ color: 'red' }} /> : <FavoriteBorderIcon style={{ color: 'rgb(32, 104, 197)' }} />}

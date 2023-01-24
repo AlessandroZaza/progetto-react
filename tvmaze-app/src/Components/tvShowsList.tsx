@@ -45,7 +45,7 @@ class TVShowsList extends React.Component<{}, State> {
 
     render() {
         return (
-            <div>
+            <div style={{ paddingTop: '6.4vh' }} >
                 {this.state.shows ? (
                     <div>
                         {this.state.shows.slice(0, this.state.limit).map((show: Show) => (
