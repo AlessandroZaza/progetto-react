@@ -21,7 +21,7 @@ class TVShowsList extends React.Component<{}, State> {
     state: State = {
         shows: [],
         offset: 0,
-        limit: 10,
+        limit: 5,
         hasMore: true
     }
 
