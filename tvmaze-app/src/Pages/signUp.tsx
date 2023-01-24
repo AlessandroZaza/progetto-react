@@ -14,6 +14,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext, UseUserAuth } from '../Context/authContext';
 import { useState } from 'react';
 import GoogleIcon from '@mui/icons-material/Google';
+import CopyrightText from '../Components/copyright';
 
 const theme = createTheme();
 
@@ -91,27 +92,29 @@ export default function SignUp() {
               <Button
                 fullWidth
                 variant="outlined"
-                sx={{ mt: 3, mb: 2, mr: 5 }}
+                sx={{ mt: 6 }}
                 onClick={signInWithGoogle}
               >
-                <GoogleIcon />
+                <GoogleIcon
+                sx={{ mr: 2 }}
+                />
                 Sign Up with Google
               </Button>
 
               <Button
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 2, mb: 3 }}
                 onClick={handleCreateAccount}
               >
                 Sign Up
               </Button>
-              <Link to={"/sign-in"}>
+              <Link to={"/sign-in"} >
                 {"Already have an account? Sign in"}
               </Link>
             </Box>
           </Box>    
-
+          <CopyrightText sx={{ mt: 8, mb: 4 }} />
         </Container>
       </ThemeProvider>
     </div>

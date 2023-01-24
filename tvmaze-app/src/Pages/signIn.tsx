@@ -11,26 +11,13 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import CopyrightText from '../Components/copyright'
 import './signIn.css';
-
-
-function Copyright(props: any) {
-    return (
-        <Typography variant="body2" color="text.secondary" align="center" {...props}>
-            {'Copyright © '}
-            <Link to={"/home"}>
-                TvMaze-App
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
 
 const theme = createTheme();
 
 export default function SignIn() {
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -101,7 +88,7 @@ export default function SignIn() {
 
                         </Box>
                     </Box>
-                    <Copyright sx={{ mt: 8, mb: 4 }} />
+                    <CopyrightText sx={{ mt: 8, mb: 4 }} />
                 </Container>
             </ThemeProvider>
         </div>
