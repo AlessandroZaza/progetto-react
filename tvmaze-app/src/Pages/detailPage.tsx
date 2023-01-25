@@ -11,12 +11,6 @@ const DetailPages = () => {
 
             <div style={{ backgroundColor: 'white' }}>
 
-                <DetailPage match={{
-                    params: {
-                        id: ''
-                    }
-                }} />
-
             </div>
             <Footer></Footer>
         </>

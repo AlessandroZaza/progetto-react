@@ -12,35 +12,11 @@ import { CardActionArea } from '@mui/material';
 import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import { getShowsById } from '../API';
 
-interface Show {
-    id: number;
-    name: string;
-    summary: string;
-    image: {
-        medium: string;
-    };
-    cast: [
-        {
-            name: string;
-        }
-    ];
-    runtime: number;
-}
+const DetailPage = () => {
 
-interface Props {
-    match: {
-        params: {
-            id: string;
-        };
-    };
-}
-
-const DetailPage: React.FC<Props> = ({ match }) => {
-    const [show] = useState<Show | null>(null);
-
-
-    if (!show) {
+    /* if (!show) {
         return <div style={{ border: '1px solid whitesmoke', position: 'fixed', width: '100%', minHeight: '100vh', backgroundColor: 'whitesmoke' }}>
 
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '33vh' }}>
@@ -55,16 +31,11 @@ const DetailPage: React.FC<Props> = ({ match }) => {
                 <h1>{show.name}</h1>
                 <img src={show.image.medium} alt={show.name} />
                 <p>{show.summary}</p>
-                <h2>Cast</h2>
-                <ul>
-                    {show.cast.map((actor) => (
-                        <li key={actor.name}>{actor.name}</li>
-                    ))}
-                </ul>
+                
                 <p>Runtime: {show.runtime} minutes</p>
             </div>
         );
-    }
+    } */
 
 
 };

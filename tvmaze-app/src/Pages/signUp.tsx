@@ -1,68 +1,86 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import * as React from "react";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
 import { Link, useNavigate } from "react-router-dom";
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { AuthContext, UseUserAuth } from '../Context/authContext';
-import { useState } from 'react';
-import GoogleIcon from '@mui/icons-material/Google';
-import CopyrightText from '../Components/copyright';
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { AuthContext, UseUserAuth } from "../Context/authContext";
+import { useState } from "react";
+import GoogleIcon from "@mui/icons-material/Google";
+import CopyrightText from "../Components/copyright";
+import { auth } from "../Firebase/firebase-config";
+import {
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 
 const theme = createTheme();
 
 export default function SignUp() {
-
   const { currentUser, createAccount, signInWithGoogle, login } = UseUserAuth();
-
+  
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   const navigate = useNavigate();
 
-  const handleCreateAccount = () => {
+  const handleCreateAccount = async () => {
     try {
-      createAccount(email, password);
-      navigate("/home")
-      console.log(email + password);
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(res);
+      navigate("/home");
+      console.log("sei loggato come: " + email + password);
     } catch (err: any) {
       console.log(err);
     }
   };
 
+  React.useEffect(() => {
+    if (currentUser !== undefined) {
+      navigate("/home");
+      console.log("ciao");
+    }
+  }, [navigate, currentUser]);
+
   return (
-
-    <div style={{ border: '2px solid whitesmoke', width: '100%', height: '100%', padding: '5% 5% 5% 5%', marginTop: '35%', backgroundColor: 'whitesmoke' }}>
-
+    <div
+      style={{
+        border: "2px solid whitesmoke",
+        width: "100%",
+        height: "100%",
+        padding: "5% 5% 5% 5%",
+        marginTop: "35%",
+        backgroundColor: "whitesmoke",
+      }}
+    >
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <Box
             sx={{
               marginTop: 8,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
-            <Typography component="h1" variant="h4" style={{ position: 'absolute', top: '20%' }} >
+            <Typography
+              component="h1"
+              variant="h4"
+              style={{ position: "absolute", top: "20%" }}
+            >
               TvMaze-App
             </Typography>
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            </Avatar>
+            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
             <Typography component="h1" variant="h5">
               Sign up
             </Typography>
             <Box component="form" noValidate sx={{ mt: 3 }}>
               <Grid container spacing={2}>
-
                 <Grid item xs={12}>
                   <TextField
                     required
@@ -86,7 +104,6 @@ export default function SignUp() {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </Grid>
-
               </Grid>
 
               <Button
@@ -95,9 +112,7 @@ export default function SignUp() {
                 sx={{ mt: 6 }}
                 onClick={signInWithGoogle}
               >
-                <GoogleIcon
-                  sx={{ mr: 2 }}
-                />
+                <GoogleIcon sx={{ mr: 2 }} />
                 Sign Up with Google
               </Button>
 
@@ -109,9 +124,7 @@ export default function SignUp() {
               >
                 Sign Up
               </Button>
-              <Link to={"/sign-in"} >
-                {"Already have an account? Sign in"}
-              </Link>
+              <Link to={"/sign-in"}>{"Already have an account? Sign in"}</Link>
             </Box>
           </Box>
           <CopyrightText sx={{ mt: 8, mb: 4 }} />
@@ -120,7 +133,6 @@ export default function SignUp() {
     </div>
   );
 }
-
 
 /*
 import * as React from 'react';

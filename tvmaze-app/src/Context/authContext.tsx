@@ -17,6 +17,7 @@ import {
   signOut,
   User,
 } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export interface AuthProviderProps {
   children: ReactNode;
@@ -24,7 +25,7 @@ export interface AuthProviderProps {
 
 interface authContext {
   currentUser?: User | null;
-  createAccount: (email: string, password: string) => void;
+  createAccount: (email: string, password: string) => Promise<any>;
   login: (email: string, password: string) => void;
   signInWithGoogle: () => void;
   logOut: () => void;
@@ -32,17 +33,17 @@ interface authContext {
 
 export const AuthContext = createContext<authContext>({
   currentUser: undefined,
-  createAccount: async () => { },
-  login: async () => { },
-  signInWithGoogle: async () => { },
-  logOut: async () => { },
+  createAccount: async (email: string, password: string) => {},
+  login: async () => {},
+  signInWithGoogle: async () => {},
+  logOut: async () => {},
 });
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-
   // States
   const [currentUser, setCurrentUser] = useState<User | null>();
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -55,7 +56,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Create account 
+  // Create account
   const createAccount = async (email: string, password: string) => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
@@ -86,7 +87,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   // Logout
   const logOut = () => {
     signOut(auth)
-      .then(() => { })
+      .then(() => {})
       .catch((error) => {
         console.log(error);
       });

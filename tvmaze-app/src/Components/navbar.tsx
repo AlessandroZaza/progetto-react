@@ -19,6 +19,9 @@ import '../Style/TVShowCard.css'; // importa il file CSS per la card
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const Search = styled('div')(({ theme }) => ({
+
+  
+
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -104,6 +107,7 @@ export default function PrimarySearchAppBar() {
        <p color='black'> Profile </p> 
       </MenuItem>
       <Link to={"/sign-in"} className="link-no-decoration" >
+        
       <MenuItem onClick={handleMenuClose}>
        <p color='black' > Log-out </p> 
         </MenuItem>
