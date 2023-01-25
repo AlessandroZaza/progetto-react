@@ -96,7 +96,7 @@ export default function SignUp() {
                 onClick={signInWithGoogle}
               >
                 <GoogleIcon
-                sx={{ mr: 2 }}
+                  sx={{ mr: 2 }}
                 />
                 Sign Up with Google
               </Button>
@@ -113,7 +113,7 @@ export default function SignUp() {
                 {"Already have an account? Sign in"}
               </Link>
             </Box>
-          </Box>    
+          </Box>
           <CopyrightText sx={{ mt: 8, mb: 4 }} />
         </Container>
       </ThemeProvider>
