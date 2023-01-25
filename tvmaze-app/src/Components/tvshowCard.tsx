@@ -1,10 +1,8 @@
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
-import RemoveRedEye from '@mui/icons-material/RemoveRedEye';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Divider from '@mui/material/Divider';
-import Snackbar, { SnackbarOrigin } from '@mui/material/Snackbar';
 import Card from '@mui/material/Card';
 import { CardActionArea } from '@mui/material';
 import { Link } from "react-router-dom";

@@ -8,7 +8,6 @@ import DetailPage from './Pages/detailPage';
 import SearchPage from './Pages/searchPage';
 import SignIn from './Pages/signIn';
 import SignUp from './Pages/signUp';
-import CardList from './Components/cardList';
 import NowWatching from './Pages/nowWatching';
 
 const router = createBrowserRouter([
@@ -75,26 +74,6 @@ function App() {
     <>
         <RouterProvider router={router} />
     </>
-  );
-}
-
-interface ICard {
-  image:string;
-  text:string;
-}
-
-const data = [
-{ image: '/Images/interstellar.jpg', text: 'CARD 1' },
-{ image: '/image2.jpg', text: 'Card 2' },
-{ image: '/image2.jpg', text: 'Card 2' },
-];
-
-
-function AppCard() {
-  return (
-    <div className="app">
-      <CardList data={data} />
-    </div>
   );
 }
 
