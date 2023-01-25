@@ -40,9 +40,6 @@ export default function StickyFooter() {
         }}
       >
         <Container maxWidth="sm">
-          <Typography variant="body1">
-            My sticky footer can be found here.
-          </Typography>
           <Typography variant="body2" color="text.secondary" align="center" >
             {'Copyright © '}
             <Link to={"/home"}>
